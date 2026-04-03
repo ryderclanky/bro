@@ -1,6 +1,6 @@
 const CACHE = 'dropship-guide-v1';
 const ASSETS = [
-  './dropship-guide.html',
+  './index.html',
   './manifest.json',
   'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap'
 ];
@@ -25,6 +25,6 @@ self.addEventListener('fetch', e => {
       const clone = res.clone();
       caches.open(CACHE).then(cache => cache.put(e.request, clone));
       return res;
-    })).catch(() => caches.match('./dropship-guide.html'))
+    })).catch(() => caches.match('./index.html'))
   );
 });
